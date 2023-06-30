@@ -12,3 +12,4 @@ package-lock.json
 es
 lib
 dist
+.next
