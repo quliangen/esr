@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "quliangen@outlook.com",
+  "license": "ISC",
+  "engines": {
+    "pnpm": ">= 7.0.0"
+  },
+  "packageManager": "pnpm@7.0.0",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
