@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig",
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "skipDefaultLibCheck": true,
+    }
+}

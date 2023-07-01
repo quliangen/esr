@@ -3,7 +3,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -r dev",
     "next:dev": "pnpm --dir ./packages/next-app dev",
     "next:build": "pnpm --dir ./packages/next-app build",
     "next:start": "pnpm --dir ./packages/next-app start",

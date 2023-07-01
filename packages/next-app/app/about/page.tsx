@@ -1,18 +1,33 @@
-// "use client";
+'use client';
 
+import { useState, useEffect } from 'react';
+import axios from "axios";
 import Link from 'next/link'
 
-async function getData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ name: '张三'})
-    }, 3000);
-  })
+function useAbout() {
+  const [clientData, setClientData] = useState('');
+  const getClientData = async () => {
+    try {
+      const res = await axios.get('https://suggest.taobao.com/sug?code=utf-8&q=汽车&callback=cb');
+      debugger
+      setClientData(res.data)
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(() => {
+    // getClientData()
+  }, [])
+
+  return {
+    clientData
+  }
 }
 
 export default async function About() {
-  console.log('About 执行');
-  const data: any = await getData()
+  const { clientData } = useAbout();
+  console.log('About 执行', clientData);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -21,7 +36,9 @@ export default async function About() {
           <span> about </span>
         </p>
         <div> <Link href='/'> 回到首页 </Link> </div>
-        <div>{ data.name }</div>
+
+        <div>客户端获取数据</div>
+        <div>{ clientData }</div>
       </div>
     </main>
   )
